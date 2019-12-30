@@ -1,6 +1,7 @@
 # Code Institute - Final Project
 
 Final Project for Code Institute 
+Issue Tracker
 
 ## Getting Started
 
@@ -8,6 +9,16 @@ Final Project for Code Institute
 - cd into project directory
 - pip install -r requirements.txt
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Technologies Used
+
+```
+- Python3
+- Django 2.2
+- Postgres Heroku
+- Sentry
+- Gitlab CI
+```
 
 ### Prerequisites
 
