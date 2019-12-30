@@ -1,14 +1,9 @@
 # Code Institute - Final Project
 
-Final Project for Code Institute 
-Issue Tracker
+Final Project for Code Institute - Issue Tracker
 
-## Getting Started
+## Quick Description
 
-- git clone https://github.com/AnestIwata/Code-Institute---Final-Project
-- cd into project directory
-- pip install -r requirements.txt
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Technologies Used
 
@@ -18,11 +13,14 @@ These instructions will get you a copy of the project up and running on your loc
 - Postgres Heroku
 - Sentry
 - Travis CI
+- Stripe
+- Jinja2
+- Bootstrap
 ```
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+What things you need to install before running this software:
 
 ```
 - Django 2.2
@@ -34,23 +32,26 @@ What things you need to install the software and how to install them
 
 A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
-
+Clone the repository:
 ```
-Give the example
-```
-
-And repeat
-
-```
-until finished
+git clone https://github.com/AnestIwata/Code-Institute---Final-Project
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Create virtual env:
+
+```
+$ virtualenv env
+```
+
+Install dependencies:
+
+```
+$ pip install -r requirements.txt
+```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Deployed to Heroku. [Link](https://django-project-codeins.herokuapp.com/)
 
 ## Built With
 
