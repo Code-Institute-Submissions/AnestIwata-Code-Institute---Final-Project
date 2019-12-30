@@ -17,7 +17,7 @@ These instructions will get you a copy of the project up and running on your loc
 - Django 2.2
 - Postgres Heroku
 - Sentry
-- Gitlab CI
+- Travis CI
 ```
 
 ### Prerequisites

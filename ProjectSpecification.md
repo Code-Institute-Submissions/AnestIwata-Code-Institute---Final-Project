@@ -7,7 +7,10 @@ By authenticating on the site and paying for some of its services, users can adv
 The site owner is able to make money by providing this set of services to the users. There is no way for a regular user to bypass the site's mechanisms and derive all of the value available to paid users without paying.
 Project RequirementsMain Technologies
 
-    HTML, CSS, JavaScript, Python+Django
+    HTML, 
+    CSS, 
+    JavaScript, 
+    Python+Django
 
     Postgres
 
