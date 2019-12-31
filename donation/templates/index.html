@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container h-100">
+    <div class="row justify-content-center pt-5">
+        <div class="card col-4 text-center pt-5">
+            <h2>Donate 15 Euro</h2>
+            <form action="{% url 'charge' %}" method="post">
+              {% csrf_token %}
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                      data-key="{{ key }}"
+                      data-description="A Django Charge"
+                      data-amount="1500"
+                      currency="eur"
+                      data-locale="auto"></script>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
