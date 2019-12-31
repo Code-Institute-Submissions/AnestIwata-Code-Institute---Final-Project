@@ -23,6 +23,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'projects' %}">Projects</a>
                 </li>
@@ -33,14 +34,16 @@
                     <a class="nav-link" href="{% url 'bugs' %}">Bugs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'projects' %}">Logout</a>
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                 </li>
+                {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'projects' %}">Login</a>
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'projects' %}">Sign Up</a>
                 </li>
+                {% endif %}
             </ul>
         </div>
     </div>
@@ -50,7 +53,7 @@
 
 
 <!-- Footer -->
-<footer class="py-5 bg-dark">
+<footer class="py-5 bg-dark fixed-bottom">
     <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Pawel Pelech 2019</p>
     </div>
