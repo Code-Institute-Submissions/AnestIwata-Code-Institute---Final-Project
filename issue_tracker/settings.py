@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'features.apps.FeaturesConfig',
     'projects.apps.ProjectsConfig',
     'landing.apps.LandingConfig',
+    'accounts.apps.AccountsConfig',
     'bugs.apps.BugsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
     'crispy_forms',
-    'accounts.apps.AccountsConfig',
 
 ]
 

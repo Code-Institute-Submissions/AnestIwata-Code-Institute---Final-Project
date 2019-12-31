@@ -4,7 +4,10 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-frontpage/blob/master/LICENSE)
  */
 body {
-  padding-top: 56px;
+    padding-top: 56px;
+    min-height: 1000px;
+    margin-bottom: 100px;
+    clear: both;
 }
 
 html,body{

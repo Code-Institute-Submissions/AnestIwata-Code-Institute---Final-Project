@@ -78,3 +78,5 @@ Deployed to Heroku. [Link](https://django-project-codeins.herokuapp.com/)
 
 Used free Bootstrap template 
 - [Boostrap Business Frontpage](https://startbootstrap.com/templates/business-frontpage/)
+- [Django Login/Registration tutorial](https://wsvincent.com/django-user-authentication-tutorial-login-and-logout/)
+- [Django Docs](https://www.djangoproject.com/start/overview/)
