@@ -1,7 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div>
-{{ feature.name }}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-4">
+                <h1>{{ feature.name }}</h1>
+                <h2>{{ feature.upvotes }}</h2>
+                 <form>
+                  <input type="text" placeholder="Example input">
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary">Download</button>
+                  </span>
+                 </form>
+                {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+                <form action="{% url 'features_main:vote' feature.id %}" method="post">
+                {% csrf_token %}
+                {{ feature.description }}
+
+            <!--    {% for choice in question.choice_set.all %}-->
+            <!--        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ feature.id }}">-->
+            <!--        <label for="choice{{ forloop.counter }}">{{ feature.name }}</label><br>-->
+            <!--    {% endfor %}-->
+                <input type="submit" value="Vote">
+                </form>
+        </div>
+    </div>
 </div>
 {% endblock %}

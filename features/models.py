@@ -6,6 +6,8 @@ class Feature(models.Model):
     status = models.IntegerField(default=0)
     project = models.ForeignKey('projects.Project', on_delete=models.CASCADE)
     timestamp = models.DateTimeField('date published')
+    upvotes = models.IntegerField(default=0)
+    # author = models.ForeignKey('users.User', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name

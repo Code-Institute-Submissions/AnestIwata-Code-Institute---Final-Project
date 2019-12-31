@@ -2,6 +2,7 @@ from django.urls import path
 
 from . import views
 
+app_name = 'features_main'
 urlpatterns = [
     path('', views.index, name='features'),
     path('<int:feature_id>/', views.feature, name='feature page'),
