@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
 from django.views import generic
@@ -25,6 +26,7 @@ class FeatureView(generic.DetailView):
     template_name = 'features/feature.html'
 
 
+@login_required
 def create_feature(request):
     """
     Create a feature.
@@ -39,6 +41,7 @@ def create_feature(request):
     return render(request, 'features/add_feature.html', {'form': form})
 
 
+@login_required
 def delete_feature(request, feature_id):
     """
     Delete a feature
@@ -50,6 +53,7 @@ def delete_feature(request, feature_id):
         return redirect('features_main:features')
 
 
+@login_required
 def add_comment(request, feature_id):
     """
     Add a comment to a feature.
@@ -57,6 +61,7 @@ def add_comment(request, feature_id):
     return HttpResponse("This is a panel to add a comment")
 
 
+@login_required
 def vote(request, feature_id):
     """
     Allow user to vote for feature.

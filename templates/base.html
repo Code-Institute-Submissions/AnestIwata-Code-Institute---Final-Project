@@ -25,13 +25,16 @@
             <ul class="navbar-nav ml-auto">
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'projects' %}">Projects</a>
+                    <a class="nav-link" href="{% url 'projects_main:projects' %}">Projects</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'features_main:features' %}">Features</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'bugs' %}">Bugs</a>
+                    <a class="nav-link" href="{% url 'bugs_main:bugs' %}">Bugs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'donation' %}">Donate</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'logout' %}">Logout</a>

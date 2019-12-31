@@ -29,7 +29,7 @@
             {% if user.is_authenticated %}
             {% else %}
             <div class="ml-auto">
-                <a class="btn btn-primary btn-lg" href="#">Sign up now! &raquo;</a>
+                <a class="btn btn-primary btn-lg" href="{% url 'signup' %}">Sign up now! &raquo;</a>
             </div>
             {% endif %}
         </div>
