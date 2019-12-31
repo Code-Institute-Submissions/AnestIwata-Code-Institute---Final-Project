@@ -16,7 +16,7 @@ class HomePageView(TemplateView):
         return context
 
 
-def charge(request):
+def makeDonation(request):
     if request.method == 'POST':
         charge = stripe.Charge.create(
             amount=1500,
@@ -24,4 +24,8 @@ def charge(request):
             description='A Django charge',
             source=request.POST['stripeToken']
         )
+
+        user = request.user
+        user.profile.donations += 15
+        user.save()
         return render(request, 'charge.html')

@@ -19,10 +19,17 @@
                         <a href="{% url 'features_main:delete feature' feature.id%}" class="btn btn-danger"
                            role="button">Delete!</a>
                     </div>
+                    {% if request.user.profile.donations >= 15 %}
                     <div class="offset-md-2 col-md-3 my-auto">
                         <a href="{% url 'features_main:vote' feature.id %}" class="btn btn-primary"
                            role="button">Vote</a>
                     </div>
+                    {% else %}
+                    <div class="offset-md-2 col-md-3 my-auto">
+                        <a href="{% url 'features_main:vote' feature.id %}" class="btn btn-primary disabled"
+                           role="button">Vote</a>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

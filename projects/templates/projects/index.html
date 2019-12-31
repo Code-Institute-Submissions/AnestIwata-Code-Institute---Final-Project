@@ -2,9 +2,15 @@
 {% block content %}
 <div class="container">
     <div class="col-md-12 pt-5">
+        {% if request.user.profile.donations >= 15 %}
         <div class="row pt-4">
             <a href="{% url 'projects_main:add project' %}" class="btn btn-danger ml-auto" role="button">Add new project!</a>
         </div>
+        {% else %}
+        <div class="row pt-4">
+            <a href="{% url 'projects_main:add project' %}" class="btn btn-danger ml-auto" role="button">Add new project!</a>
+        </div>
+        {% endif %}
     </div>
     <div class="row pt-3">
         {% for project in projects_list %}
