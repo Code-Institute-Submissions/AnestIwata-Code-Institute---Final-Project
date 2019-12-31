@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container h-100">
+    <div class="row justify-content-center pt-5">
+        <div class="card col-4 text-center pt-5">
+            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+            <h1>{{ bug.name }}</h1>
+            <h2>Number of upvotes: {{ bug.upvotes }}</h2>
+            <div class="card text-center">
+                <p>Description: {{ bug.description }}</p>
+            </div>
+            <div class="col-md-12 m-2">
+                <div class="row">
+                    <div class="offset-md-2 col-md-3 my-auto">
+                        <a href="{% url 'bugs_main:delete bug' bug.id%}" class="btn btn-danger"
+                           role="button">Delete!</a>
+                    </div>
+                    <div class="offset-md-2 col-md-3 my-auto">
+                        <a href="{% url 'bugs_main:vote' bug.id %}" class="btn btn-primary"
+                           role="button">Vote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
