@@ -26,6 +26,7 @@ What things you need to install before running this software:
 - Django 2.2
 - Python3
 - Pip
+- Postgres
 ```
 
 ### Installing
@@ -43,10 +44,21 @@ Create virtual env:
 $ virtualenv env
 ```
 
+Activate env:
+(This will be different for non windows OS)
+```
+$ .\env\Scripts\activate.bat
+```
 Install dependencies:
 
 ```
 $ pip install -r requirements.txt
+```
+
+Run Postgres database using psql:
+(use password you provided during installation, everything else can be left to default)
+```
+$ psql
 ```
 
 ## Deployment
