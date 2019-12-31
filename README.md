@@ -4,6 +4,9 @@ Final Project for Code Institute - Issue Tracker
 
 ## Quick Description
 
+This is a website that tracks both bugs and features for my project and lets users vote and create new tickets
+for both bugs and features, it also allows them to donate in order to suggest new feature to be developed.
+
 
 ### Technologies Used
 
@@ -68,8 +71,8 @@ Deployed to Heroku. [Link](https://django-project-codeins.herokuapp.com/)
 ## Built With
 
 * [Django](https://www.djangoproject.com/) - The web framework used
-* [Heroku](https://www.heroku.com/) - Dependency Management
-* [Sentry](https://sentry.io/welcome/) - Used to generate RSS Feeds
+* [Heroku](https://www.heroku.com/) - Deployment platform
+* [Sentry](https://sentry.io/welcome/) - Used to capture errors
 
 ## Acknowledgments
 
