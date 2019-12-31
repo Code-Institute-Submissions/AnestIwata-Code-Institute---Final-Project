@@ -25,7 +25,6 @@ class FeatureView(generic.DetailView):
     template_name = 'features/feature.html'
 
 
-
 def create_feature(request):
     """
     Create a feature.
@@ -38,6 +37,17 @@ def create_feature(request):
     else:
         form = CreateFeatureForm()
     return render(request, 'features/add_feature.html', {'form': form})
+
+
+def delete_feature(request, feature_id):
+    """
+    Delete a feature
+    """
+    try:
+        Feature.objects.filter(pk=feature_id).delete()
+        return redirect('features_main:features')
+    except:
+        return redirect('features_main:features')
 
 
 def add_comment(request, feature_id):

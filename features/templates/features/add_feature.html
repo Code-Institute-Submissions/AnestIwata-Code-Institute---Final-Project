@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
 {% block content %}
 <div class="container">
         <div class="row p-4 justify-content-center">
@@ -8,7 +11,7 @@
             <form class="form form-control-sm" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     {% csrf_token %}
-                    {{ form  }}
+                    {{ form|crispy }}
                 </div>
                 <button type="submit" class="btn btn-info">Create Ticket</button>
             </form>
