@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'features.apps.FeaturesConfig',
     'projects.apps.ProjectsConfig',
+    'landing.apps.LandingConfig',
     'bugs.apps.BugsConfig',
     'django.contrib.admin',
     'django.contrib.auth',

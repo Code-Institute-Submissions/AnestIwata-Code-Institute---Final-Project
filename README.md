@@ -59,3 +59,7 @@ Deployed to Heroku. [Link](https://django-project-codeins.herokuapp.com/)
 * [Heroku](https://www.heroku.com/) - Dependency Management
 * [Sentry](https://sentry.io/welcome/) - Used to generate RSS Feeds
 
+## Acknowledgments
+
+Used free Bootstrap template 
+- [Boostrap Business Frontpage](https://startbootstrap.com/templates/business-frontpage/)
