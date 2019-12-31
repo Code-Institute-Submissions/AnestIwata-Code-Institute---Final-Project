@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.shortcuts import render
 from .models import Feature
 
@@ -12,7 +12,11 @@ def index(request):
 
 
 def feature(request, feature_id):
-    return render(request, 'features/index.html')
+    try:
+        retrieved_feature = Feature.objects.get(pk=feature_id)
+    except:
+        raise Http404('Feature does not exist')
+    return render(request, 'features/index.html', {'feature': retrieved_feature})
 
 
 def add_comment(request, feature_id):
