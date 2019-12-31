@@ -1,28 +1,29 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
+from django.views import generic
 from .models import Feature
 from .forms import CreateFeatureForm
 
 
-def index(request):
+class IndexView(generic.ListView):
     """
     Render a list of features.
     """
-    # features = Feature.objects.all()
-    features = get_list_or_404(Feature)
-    context = {
-        'features_list': features,
-    }
-    return render(request, 'features/index.html', context)
+    template_name = 'features/index.html'
+    context_object_name = 'features_list'
+
+    def get_queryset(self):
+        """Return all of the features"""
+        return Feature.objects.all()
 
 
-def feature(request, feature_id):
+class FeatureView(generic.DetailView):
     """
     Render a single feature.
     """
-    retrieved_feature = get_object_or_404(Feature, pk=feature_id)
+    model = Feature
+    template_name = 'features/feature.html'
 
-    return render(request, 'features/feature.html', {'feature': retrieved_feature})
 
 
 def create_feature(request):
