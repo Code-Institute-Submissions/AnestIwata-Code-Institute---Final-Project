@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.timezone import now
+from accounts.models import Profile
 
 
 class Project(models.Model):
@@ -8,8 +9,7 @@ class Project(models.Model):
     status = models.CharField(default='To Do', max_length=20)
     timestamp = models.DateTimeField('date published', default=now, blank=True)
     upvotes = models.IntegerField(default=0)
-
-    # author = models.ForeignKey('users.User', on_delete=models.CASCADE)
+    author = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.name

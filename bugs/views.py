@@ -32,6 +32,7 @@ def create_bug(request):
         form = CreateBugForm(request.POST)
         if form.is_valid():
             retrieved_bug = form.save()
+            retrieved_bug.author = request.user.profile
             return redirect('bugs_main:bug page', retrieved_bug.pk)
     else:
         form = CreateBugForm()

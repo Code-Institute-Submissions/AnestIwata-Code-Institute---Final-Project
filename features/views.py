@@ -35,6 +35,7 @@ def create_feature(request):
         form = CreateFeatureForm(request.POST)
         if form.is_valid():
             retrieved_feature = form.save()
+            retrieved_feature.author = request.user
             return redirect('features_main:feature page', retrieved_feature.pk)
     else:
         form = CreateFeatureForm()

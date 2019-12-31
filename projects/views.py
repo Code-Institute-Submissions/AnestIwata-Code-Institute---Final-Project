@@ -35,6 +35,7 @@ def create_project(request):
         form = CreateProjectForm(request.POST)
         if form.is_valid():
             retrieved_project = form.save()
+            retrieved_project.author = request.user.profile
             return redirect('projects_main:project page', retrieved_project.pk)
     else:
         form = CreateProjectForm()
