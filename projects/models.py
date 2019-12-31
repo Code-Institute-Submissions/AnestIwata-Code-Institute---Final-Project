@@ -1,11 +1,15 @@
 from django.db import models
+from django.utils.timezone import now
 
 
 class Project(models.Model):
     name = models.CharField(max_length=200)
     description = models.CharField(max_length=5000)
-    status = models.IntegerField(default=0)
-    timestamp = models.DateTimeField('date published')
+    status = models.CharField(default='To Do', max_length=20)
+    timestamp = models.DateTimeField('date published', default=now, blank=True)
+    upvotes = models.IntegerField(default=0)
+
+    # author = models.ForeignKey('users.User', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
