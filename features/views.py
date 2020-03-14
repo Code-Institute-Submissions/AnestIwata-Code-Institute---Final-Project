@@ -1,7 +1,9 @@
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
+from django.shortcuts import render, redirect
 from django.views import generic
+
+from accounts.models import Profile
 from .models import Feature
 from .forms import CreateFeatureForm
 
@@ -35,7 +37,8 @@ def create_feature(request):
         form = CreateFeatureForm(request.POST)
         if form.is_valid():
             retrieved_feature = form.save()
-            retrieved_feature.author = request.user
+            retrieved_feature.author = Profile.objects.get_or_create(user=request.user)[0]
+
             return redirect('features_main:feature page', retrieved_feature.pk)
     else:
         form = CreateFeatureForm()

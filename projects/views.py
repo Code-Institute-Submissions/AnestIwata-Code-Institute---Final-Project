@@ -2,6 +2,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views import generic
+
+from accounts.models import Profile
 from .models import Project
 from .forms import CreateProjectForm
 
@@ -35,7 +37,7 @@ def create_project(request):
         form = CreateProjectForm(request.POST)
         if form.is_valid():
             retrieved_project = form.save()
-            retrieved_project.author = request.user
+            retrieved_project.author = Profile.objects.get_or_create(user=request.user)[0]
             return redirect('projects_main:project page', retrieved_project.pk)
     else:
         form = CreateProjectForm()

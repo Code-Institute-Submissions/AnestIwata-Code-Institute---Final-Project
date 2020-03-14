@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.timezone import now
 from accounts.models import Profile
 
+
 class Bug(models.Model):
     name = models.CharField(max_length=200)
     description = models.CharField(max_length=5000)
@@ -10,7 +11,7 @@ class Bug(models.Model):
     timestamp = models.DateTimeField('date published', default=now, blank=True)
     upvotes = models.IntegerField(default=0)
 
-    author = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    author = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.name
