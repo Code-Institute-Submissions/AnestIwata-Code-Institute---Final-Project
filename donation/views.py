@@ -26,6 +26,6 @@ def makeDonation(request):
         )
 
         user = request.user
-        user.profile.donations += 15
+        user.profile.add_donation()
         user.save()
         return render(request, 'charge.html')

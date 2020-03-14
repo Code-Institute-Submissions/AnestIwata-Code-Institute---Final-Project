@@ -12,6 +12,8 @@ class Profile(models.Model):
     email = models.CharField(max_length=100, blank=True)
     birth_date = models.DateField(null=True, blank=True)
 
+    def add_donation(self):
+        self.donations = self.donations + 15
 # @receiver(post_save, sender=User)
 # def create_user_profile(sender, instance, created, **kwargs):
 #     if created:
