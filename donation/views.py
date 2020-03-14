@@ -4,6 +4,8 @@ from django.conf import settings
 from django.views.generic.base import TemplateView
 from django.shortcuts import render
 
+from accounts.models import Profile
+
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
@@ -25,7 +27,7 @@ def makeDonation(request):
             source=request.POST['stripeToken']
         )
 
-        user = request.user
-        user.profile.add_donation()
-        user.save()
+        user = Profile.objects.get_or_create(user=request.user)
+        user[0].add_donation()
+        user[0].save()
         return render(request, 'charge.html')
