@@ -3,13 +3,25 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-frontpage/blob/master/LICENSE)
  */
-body {
-    padding-top: 56px;
-    min-height: 1000px;
-    margin-bottom: 100px;
-    clear: both;
+
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
-html,body{
-    height: 100%
+#container {
+    min-height: 100%;
+    position: relative;
+}
+
+#content {
+    padding-bottom: 120px;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
 }
