@@ -4,6 +4,8 @@ from django.shortcuts import render, get_object_or_404, get_list_or_404, redirec
 from django.views import generic
 from .models import Bug
 from .forms import CreateBugForm
+from accounts.models import Profile
+from projects.models import Project
 
 
 class IndexView(generic.ListView):
@@ -34,8 +36,10 @@ def create_bug(request):
     if request.method == "POST":
         form = CreateBugForm(request.POST)
         if form.is_valid():
-            retrieved_bug = form.save()
-            retrieved_bug.author = request.user
+            retrieved_bug = form.save(commit=False)
+            author = Profile.objects.get(user=request.user)
+            retrieved_bug.author = author
+            retrieved_bug.save()
             return redirect('bugs_main:bug page', retrieved_bug.pk)
     else:
         form = CreateBugForm()
