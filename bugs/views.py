@@ -5,6 +5,7 @@ from django.views import generic
 from .models import Bug
 from .forms import CreateBugForm
 
+
 class IndexView(generic.ListView):
     """
     Render a list of bugs.
@@ -16,12 +17,14 @@ class IndexView(generic.ListView):
         """Return all of the bugs"""
         return Bug.objects.all()
 
+
 class BugView(generic.DetailView):
     """
     Render a single bug.
     """
     model = Bug
     template_name = 'bugs/bug.html'
+
 
 @login_required
 def create_bug(request):
@@ -38,6 +41,7 @@ def create_bug(request):
         form = CreateBugForm()
     return render(request, 'bugs/add_bug.html', {'form': form})
 
+
 @login_required
 def delete_bug(request, bug_id):
     """
@@ -49,12 +53,14 @@ def delete_bug(request, bug_id):
     except:
         return redirect('bugs_main:bugs')
 
+
 @login_required
 def add_comment(request, bug_id):
     """
     Add a comment to a bug.
     """
     return HttpResponse("This is a panel to add a comment")
+
 
 @login_required
 def vote(request, bug_id):
