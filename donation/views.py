@@ -20,12 +20,15 @@ class HomePageView(TemplateView):
 
 def makeDonation(request):
     if request.method == 'POST':
-        charge = stripe.Charge.create(
-            amount=1500,
-            currency='eur',
-            description='A Django charge',
-            source=request.POST['stripeToken']
-        )
+        try:
+            charge = stripe.Charge.create(
+                amount=1500,
+                currency='eur',
+                description='A Django charge',
+                source=request.POST['stripeToken']
+            )
+        except:
+            pass
 
         user = Profile.objects.get_or_create(user=request.user)
         user[0].add_donation()
