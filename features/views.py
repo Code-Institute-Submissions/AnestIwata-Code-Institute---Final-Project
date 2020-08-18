@@ -4,6 +4,7 @@ from django.shortcuts import render, get_object_or_404, get_list_or_404, redirec
 from django.views import generic
 from .models import Feature
 from .forms import CreateFeatureForm
+from accounts.models import Profile
 
 
 class IndexView(generic.ListView):
@@ -34,8 +35,10 @@ def create_feature(request):
     if request.method == "POST":
         form = CreateFeatureForm(request.POST)
         if form.is_valid():
-            retrieved_feature = form.save()
-            retrieved_feature.author = request.user
+            retrieved_feature = form.save(commit=False)
+            author = Profile.objects.get(user=request.user)
+            retrieved_feature.author = author
+            retrieved_feature.save()
             return redirect('features_main:feature page', retrieved_feature.pk)
     else:
         form = CreateFeatureForm()
