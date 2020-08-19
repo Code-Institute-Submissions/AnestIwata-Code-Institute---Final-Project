@@ -4,6 +4,7 @@ from . import views
 
 
 app_name = 'bugs_main'
+
 urlpatterns = [
     path('', login_required(views.IndexView.as_view()), name='bugs'),
     path('<int:pk>/', login_required(views.BugView.as_view()), name='bug page'),

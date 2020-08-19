@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from . import views
 
 app_name = 'projects_main'
+
 urlpatterns = [
     path('', login_required(views.IndexView.as_view()), name='projects'),
     path('<int:pk>/', login_required(views.ProjectView.as_view()), name='project page'),

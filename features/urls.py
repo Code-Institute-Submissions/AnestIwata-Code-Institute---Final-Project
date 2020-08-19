@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from . import views
 
 app_name = 'features_main'
+
 urlpatterns = [
     path('', login_required(views.IndexView.as_view()), name='features'),
     path('<int:pk>/', login_required(views.FeatureView.as_view()), name='feature page'),
