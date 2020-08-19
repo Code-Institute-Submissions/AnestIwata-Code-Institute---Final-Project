@@ -13,15 +13,19 @@
         {% endif %}
     </div>
     <div class="row pt-3">
-        {% for feature in features_list %}
+        {% for feature in features_list|dictsortreversed:"upvotes" %}
              <div class="col-md-4 mb-5">
                 <div class="card h-100">
                     <div class="card-body">
                         <h4 class="card-title">{{ feature.name }}</h4>
-                        <p class="card-text">{{ feature.description }}</p>
+                        <p class="card-text">{{ feature.description|truncatechars:30 }}</p>
+                        <ul class="no-bullet-list">
+                            <li class="card-text">project: {{ feature.project }}</li>
+                            <li class="card-text">upvotes: {{ feature.upvotes }}</li>
+                        </ul>
                     </div>
                     <div class="card-footer">
-                        <a href="{% url 'features_main:feature page' feature.id    %}" class="btn btn-primary">More about {{ feature.name }}</a>
+                        <a href="{% url 'features_main:feature page' feature.id    %}" class="btn btn-primary">More about this feature</a>
                     </div>
                 </div>
             </div>

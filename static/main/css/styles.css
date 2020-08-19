@@ -25,3 +25,7 @@ html, body {
     width: 100%;
     height: 120px;
 }
+
+.no-bullet-list {
+    list-style-type: none;
+}

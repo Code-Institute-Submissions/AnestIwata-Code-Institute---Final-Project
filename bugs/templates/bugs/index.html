@@ -7,15 +7,19 @@
         </div>
     </div>
     <div class="row pt-3">
-        {% for bug in bugs_list %}
+        {% for bug in bugs_list|dictsortreversed:"upvotes" %}
              <div class="col-md-4 mb-5">
                 <div class="card h-100">
                     <div class="card-body">
                         <h4 class="card-title">{{ bug.name }}</h4>
-                        <p class="card-text">{{ bug.description }}</p>
+                         <p class="card-text">{{ bug.description|truncatechars:30 }}</p>
+                        <ul class="no-bullet-list">
+                            <li class="card-text">project: {{ bug.project }}</li>
+                            <li class="card-text">upvotes: {{ bug.upvotes }}</li>
+                        </ul>
                     </div>
                     <div class="card-footer">
-                        <a href="{% url 'bugs_main:bug page' bug.id    %}" class="btn btn-primary">More about {{ bug.name }}</a>
+                        <a href="{% url 'bugs_main:bug page' bug.id    %}" class="btn btn-primary">More about this bug</a>
                     </div>
                 </div>
             </div>
