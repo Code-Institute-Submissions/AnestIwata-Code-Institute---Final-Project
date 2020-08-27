@@ -1,6 +1,10 @@
 # Code Institute - Final Project
 
-Final Project for Code Institute - Issue Tracker
+Final Project for Code Institute
+
+![](static/main/img/readme_logo.png)
+
+<img src="static/main/img/readme_donate_form.jpeg" height="200" />
 
 ## Summary
 
@@ -202,7 +206,10 @@ will be visible in my Stripe account in the testing payments data section.
 
 To make donation you have to type:
 
-`valid email adress` -> there will be no email confirmation sent to this email because the Stripe test mode is on
+![](static/main/img/readme_donate_form.png)
+
+`valid email adress` -> there will be no email confirmation sent to this email because the Stripe 
+![](static/main/img/readme_test_mode.png) is on
 
 `valid card number` -> e.g. 4242 4242 4242 4242 or any other Stripe testing [card number](https://stripe.com/docs/testing).
 You can also use any other valid card number found via google search. In that case Stripe will return error which is handled
