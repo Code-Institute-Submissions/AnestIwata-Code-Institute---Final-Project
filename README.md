@@ -4,11 +4,9 @@ Final Project for Code Institute
 
 ![](static/main/img/readme_logo.png)
 
-![](https://github.com/AnestIwata/Code-Institute---Final-Project/blob/master/static/main/img/readme_logo.png)
+![](https://github.com/AnestIwata/Code-Institute---Final-Project/blob/master/static/main/img/readme_logo.png?s=200)
 
-a<img src="https://github.com/AnestIwata/Code-Institute---Final-Project/blob/master/static/main/img/readme_logo.png" height="200">
-
-b<img src="https://github.com/AnestIwata/Code-Institute---Final-Project/blob/master/static/main/img/readme_logo.png" width="100" height="100">
+a<img src="https://github.com/AnestIwata/Code-Institute---Final-Project/blob/master/static/main/img/readme_logo.png" height="150">
 
 ## Summary
 
