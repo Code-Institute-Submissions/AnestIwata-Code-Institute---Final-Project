@@ -207,8 +207,7 @@ To make donation you have to type:
 ![](static/main/img/readme_donate_form.png)
 
 `valid email adress` -> there will be no email confirmation sent to this email because the Stripe 
-<img src="https://github.com/AnestIwata/Code-Institute---Final-Project/blob/master/static/main/img/readme_test_mode.png" height="20">
-is on
+![](static/main/img/readme_test_mode.png) is on
 
 `valid card number` -> e.g. 4242 4242 4242 4242 or any other Stripe testing [card number](https://stripe.com/docs/testing).
 You can also use any other valid card number found via google search. In that case Stripe will return error which is handled
