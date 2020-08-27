@@ -1,5 +1,4 @@
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
 from django.views import generic
 from .models import Feature
@@ -55,14 +54,6 @@ def delete_feature(request, feature_id):
         return redirect('features_main:features')
     except:
         return redirect('features_main:features')
-
-
-@login_required
-def add_comment(request, feature_id):
-    """
-    Add a comment to a feature.
-    """
-    return HttpResponse("This is a panel to add a comment")
 
 
 @login_required

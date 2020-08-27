@@ -58,14 +58,6 @@ def delete_project(request, project_id):
 
 
 @login_required
-def add_comment(request, project_id):
-    """
-    Add a comment to a project.
-    """
-    return HttpResponse("This is a panel to add a comment")
-
-
-@login_required
 def vote(request, project_id):
     """
     Allow user to vote for project.

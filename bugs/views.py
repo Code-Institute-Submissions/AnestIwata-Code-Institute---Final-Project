@@ -1,5 +1,4 @@
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
 from django.views import generic
 from .models import Bug
@@ -56,14 +55,6 @@ def delete_bug(request, bug_id):
         return redirect('bugs_main:bugs')
     except:
         return redirect('bugs_main:bugs')
-
-
-@login_required
-def add_comment(request, bug_id):
-    """
-    Add a comment to a bug.
-    """
-    return HttpResponse("This is a panel to add a comment")
 
 
 @login_required
