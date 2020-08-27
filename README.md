@@ -2,11 +2,7 @@
 
 Final Project for Code Institute
 
-![](static/main/img/readme_logo.png)
-
-![](https://github.com/AnestIwata/Code-Institute---Final-Project/blob/master/static/main/img/readme_logo.png?s=200)
-
-a<img src="https://github.com/AnestIwata/Code-Institute---Final-Project/blob/master/static/main/img/readme_logo.png" height="150">
+<img src="https://github.com/AnestIwata/Code-Institute---Final-Project/blob/master/static/main/img/readme_logo.png" height="150">
 
 ## Summary
 
