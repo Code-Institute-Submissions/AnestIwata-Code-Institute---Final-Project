@@ -23,7 +23,7 @@
         <div class="col-md-12 mb-5">
             <h2>Quick Overview</h2>
             <hr>
-            <p>Right now we have 'x' features open and 'x' bugs waiting to be resolved. If you want to take action,
+            <p>Right now we have {{ features }} features open and {{ bugs }} bugs waiting to be resolved. If you want to take action,
             click below to sign up!</p>
             <p>In order to suggest or vote on features you have to make a one time donation of 15 euro</p>
             {% if user.is_authenticated %}
