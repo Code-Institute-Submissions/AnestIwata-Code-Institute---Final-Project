@@ -10,15 +10,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'main/css/styles.css' %}" type="text/css"/>
+    <script src="{% static 'main/js/type_footer_animation.js' %}"></script>
 
 </head>
-<body id="bg" style="background-image: url({% static 'main/img/white_brick_wall_@2X.png' %})">
+<body id="bg" style="background-image: url({% static 'main/img/white_brick_wall_@2X.png' %})" onload="animateFooter()">
 
 <div id="container">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'landing' %}"><img src="{% static 'main/img/bug-24.ico' %}"> Issue Tracker</a>
+            <a id="logo" href="{% url 'landing' %}"><img src="{% static 'main/img/bug-24.ico' %}"> Issue Tracker</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                     aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -62,7 +63,7 @@
     <!--<footer class="py-5 bg-dark fixed-bottom mobile-footer">-->
     <footer class="py-5 bg-dark" id="footer">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Pawel Pelech 2019</p>
+            <p class="m-0 text-center text-white" id="animated_footer"></p>
         </div>
     </footer>
 
